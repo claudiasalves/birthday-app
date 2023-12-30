@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const daysUntilNextBirthday = Math.ceil((nextBirthday - todaysDate) / (1000 * 60 * 60 * 24));
 
     resultName.textContent = `Hi ${userName}!`;
-    // resultDOB.textContent = `Your birthday is on ${birthday.toDateString()}`;
     nextbday.textContent= daysUntilNextBirthday
   }
 })
