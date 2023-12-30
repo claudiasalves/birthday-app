@@ -1,3 +1,3 @@
-Simple web application to calculate days until next birthday, considering current date.
+Simple web application to calculate days until the next birthday, considering the current date.
 
-Javacript, HTML
+Javascript, HTML and Tailwind
