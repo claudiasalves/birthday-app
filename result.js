@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const userName = localStorage.getItem('userName');
-  const dateOfBirth = localStorage.getItem('dateOfBirth');
+  const userName = sessionStorage.getItem('userName');
+  const dateOfBirth = sessionStorage.getItem('dateOfBirth');
 
   const resultName = document.getElementById('resultName');
   const nextbday = document.getElementById('nextbday');

@@ -5,8 +5,8 @@ document.getElementById('birthdayForm').addEventListener('submit', (event) => {
 
   const birthday = document.getElementById('birthday').value;
 
-  localStorage.setItem('userName', name);
-  localStorage.setItem('dateOfBirth', birthday);
+  sessionStorage.setItem('userName', name);
+  sessionStorage.setItem('dateOfBirth', birthday);
   
   const todaysDate = new Date();
   const userBirthday = new Date(birthday);
