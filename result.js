@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const userName = sessionStorage.getItem('userName');
-  const dateOfBirth = sessionStorage.getItem('dateOfBirth');
+  const userName = localStorage.getItem('userName');
+  const dateOfBirth = localStorage.getItem('dateOfBirth');
 
   const resultName = document.getElementById('resultName');
   const nextbday = document.getElementById('nextbday');
 
   const todaysDate = new Date();
   const birthday = new Date(dateOfBirth);
-
   let nextBirthday = new Date(todaysDate.getFullYear(), birthday.getMonth(), birthday.getDate());
   
   if (todaysDate > nextBirthday) {

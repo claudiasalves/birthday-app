@@ -2,18 +2,18 @@ document.getElementById('birthdayForm').addEventListener('submit', (event) => {
   event.preventDefault(); 
 
   const name = document.getElementById('name').value;
-
   const birthday = document.getElementById('birthday').value;
 
-  sessionStorage.setItem('userName', name);
-  sessionStorage.setItem('dateOfBirth', birthday);
+  localStorage.setItem('userName', name);
+  localStorage.setItem('dateOfBirth', birthday);
   
   const todaysDate = new Date();
   const userBirthday = new Date(birthday);
+  let nextBirthday = new Date(todaysDate.getFullYear(), userBirthday.getMonth(), userBirthday.getDate());
 
   if (
-    userBirthday.getMonth() === todaysDate.getMonth() &&
-    userBirthday.getDate() === todaysDate.getDate()
+    nextBirthday.getMonth() === todaysDate.getMonth() &&
+    nextBirthday.getDate() === todaysDate.getDate()
   ) {
     window.location.href = 'bday.html';
   } else {
