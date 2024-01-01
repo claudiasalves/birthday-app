@@ -11,17 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let nextBirthday = new Date(todaysDate.getFullYear(), birthday.getMonth(), birthday.getDate());
   
-  if (nextBirthday.getMonth() === todaysDate.getMonth() &&
-      nextBirthday.getDate() === todaysDate.getDate()) {
-      window.location.href = 'bday.html'
-  } else { 
-    if (todaysDate > nextBirthday) {
-      nextBirthday.setFullYear(todaysDate.getFullYear() + 1);
-    } 
+  if (todaysDate > nextBirthday) {
+    nextBirthday.setFullYear(todaysDate.getFullYear() + 1);
+  } 
 
-    const daysUntilNextBirthday = Math.ceil((nextBirthday - todaysDate) / (1000 * 60 * 60 * 24));
+  const daysUntilNextBirthday = Math.ceil((nextBirthday - todaysDate) / (1000 * 60 * 60 * 24));
 
-    resultName.textContent = `Hi ${userName}!`;
-    nextbday.textContent = daysUntilNextBirthday;
-  }
+  resultName.textContent = `Hi ${userName}!`;
+  nextbday.textContent = daysUntilNextBirthday;
+
 })
