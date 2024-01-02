@@ -19,14 +19,16 @@
       <form id="birthdayForm" method="post" class="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
         <div class="mb-5">
           <label class="mb-3 block text-base font-medium text-[#07074D]" for="name">Name:</label>
-          <input type="text" id="name" name="name" required 
+          <input type="text" id="name" name="name"  
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
         </div>
+        <div id="nameError"></div>
         <div class="mb-5">
           <label for="birthday" class="mb-3 block text-base font-medium text-[#07074D]">Birthday:</label>
-          <input type="date" id="birthday" name="birthday" required
+          <input type="date" id="birthday" name="birthday" 
           class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
         </div>
+        <div id="birthdayError"></div>
         <div>
           <button type="submit" 
           class="mt-6 block w-full select-none rounded-lg bg-pink-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
