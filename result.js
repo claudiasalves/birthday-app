@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const userName = localStorage.getItem('userName');
-  const dateOfBirth = localStorage.getItem('dateOfBirth');
-
   const resultName = document.getElementById('resultName');
   const nextbday = document.getElementById('nextbday');
+
+  const userName = localStorage.getItem('userName');
+  const dateOfBirth = localStorage.getItem('dateOfBirth');
 
   const todaysDate = new Date();
   const birthday = new Date(dateOfBirth);

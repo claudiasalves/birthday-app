@@ -6,6 +6,9 @@ document.getElementById('birthdayForm').addEventListener('submit', (event) => {
   const nameError = document.getElementById('nameError');
   const birthdayError = document.getElementById('birthdayError');
 
+  nameError.textContent = '';
+  birthdayError.textContent = '';
+  
   if (!name) {
     nameError.textContent = 'Please enter your name.';
     return;
@@ -15,7 +18,7 @@ document.getElementById('birthdayForm').addEventListener('submit', (event) => {
     birthdayError.textContent = 'Please enter your birthday.';
     return;
   }
-  
+
   localStorage.setItem('userName', name);
   localStorage.setItem('dateOfBirth', birthday);
   
