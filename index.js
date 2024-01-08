@@ -1,4 +1,4 @@
-document.getElementById('birthdayForm').addEventListener('submit', (event) => {
+function handleFormSubmit(event) {
   event.preventDefault(); 
 
   const name = document.getElementById('name').value;
@@ -36,4 +36,10 @@ document.getElementById('birthdayForm').addEventListener('submit', (event) => {
   } else {
     window.location.href = 'result.html';
   }
+};
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  document.getElementById('birthdayForm').addEventListener('submit', handleFormSubmit);
 });
+
+module.exports = { handleFormSubmit };
