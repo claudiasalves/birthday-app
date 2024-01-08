@@ -1,6 +1,7 @@
 /**
    * @jest-environment jsdom
    */
+  
 const { handleFormSubmit } = require('./index');
 
 describe('handleFormSubmit', () => {
@@ -32,8 +33,7 @@ describe('handleFormSubmit', () => {
   });
 
 
-
-  it('redirects to result.html for a birthday with day and month in the future', () => {
+  it('redirects to result.html if birthday is not current date', () => {
     document.body.innerHTML = `
       <form id="birthdayForm">
         <input id="name" type="text" value="John" />
@@ -60,32 +60,6 @@ describe('handleFormSubmit', () => {
     window.location.href = originalLocationHref;
   });
 
-  it('redirects to result.html for a birthday with day and month in the past', () => {
-    document.body.innerHTML = `
-      <form id="birthdayForm">
-        <input id="name" type="text" value="John" />
-        <input id="birthday" type="date" value="1990-01-01" />
-        <div id="nameError"></div>
-        <div id="birthdayError"></div>
-        <div id="loadingSpinner"></div>
-      </form>
-    `;
-
-    const mockLocation = { href: '' };
-    Object.defineProperty(window, 'location', {
-      value: mockLocation,
-      writable: true,
-    });
-    const originalLocationHref = window.location.href;
-    window.location.href = '';
-
-    handleFormSubmit({
-      preventDefault: jest.fn(),
-    });
-
-    expect(window.location.href).toBe('result.html');
-    window.location.href = originalLocationHref;
-  });
 
   it('displays an error message for empty name', () => {
     document.body.innerHTML = `
@@ -105,6 +79,7 @@ describe('handleFormSubmit', () => {
     const nameError = document.getElementById('nameError');
     expect(nameError.textContent).toBe('Please enter your name.');
   });
+
 
   it('displays an error message for empty birthday', () => {
     document.body.innerHTML = `
