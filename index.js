@@ -42,4 +42,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   document.getElementById('birthdayForm').addEventListener('submit', handleFormSubmit);
 });
 
-module.exports = { handleFormSubmit };
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { handleFormSubmit };
+}
